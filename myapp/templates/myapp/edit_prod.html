@@ -1,0 +1,81 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'log/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'log/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	
+	
+	
+	<div class="limiter" >
+		<div class="container-login100">
+			<div class="wrap-login100" style="padding: 10px; width: 800px;">
+				<div style="padding: 50px;" class="login100-pic js-tilt" data-tilt>
+					<img src="/media/{{edit.image}}" alt="IMG">
+				</div>
+
+				<form style="padding: 30px;" class="login100-form validate-form" method="post">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						Edit
+					</span>
+                    <div class="wrap-input100 validate-input">
+                        <label for="name">Name:</label>
+						<input class="input100" type="text" name="name" value="{{edit.name}}">
+					</div>
+					<div class="wrap-input100 validate-input">
+						<label for="price">Price:</label>
+						<input class="input100" type="number" name="price" value="{{edit.price}}">
+					</div>
+					<div class="container-login100-form-btn">
+                        <input class="btn btn-success" type="submit" value="Submit">
+					</div><br><br><br>				
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="{% static 'log/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'log/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/js/main.js' %}"></script>
+
+</body>
+</html>

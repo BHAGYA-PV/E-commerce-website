@@ -1,0 +1,132 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'log/images/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'log/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'log/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container">
+		   <img style="padding: 10px;" src="{% static 'assets/images/logo.png' %}">
+		   <div class="collapse navbar-collapse">
+				 <form class="d-flex" action="">
+					<ul class="navbar-nav me-auto" style="padding-left: 650px;">
+						<li class="nav-item">
+							<a style="width: 90px;" class="btn btn-success" href="/">Back</a>
+						</li>
+					 </ul>
+				 </form>
+		   </div>
+		</div>
+	 </nav>
+	
+	
+	<div class="limiter" >
+		<div class="container-login100">
+			<div class="wrap-login100" style="padding: 100px;">
+				<div style="padding-top: 200px;" class="login100-pic js-tilt" data-tilt>
+					<img src="{% static 'log/images/img-01.png' %}" alt="IMG">
+				</div>
+				
+				<form class="login100-form validate-form" method="post">
+					{% csrf_token %}
+					<span class="login100-form-title">
+						Create New Account
+					</span>
+
+                    <div class="wrap-input100 validate-input">
+                        <label for="name">Name:</label>
+						<input class="input100" type="text" name="name">
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<label for="address">Address:</label>
+						<input class="input100" type="text" name="adress">
+					</div>
+
+                    <div class="wrap-input100 validate-input">
+						<label for="city">City:</label>
+						<input class="input100" type="text" name="city">
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<label for="phone">Phone No.:</label>
+						<input class="input100" type="number" name="phone">
+					</div>
+
+                    <div class="wrap-input100 validate-input">
+						<label for="email">Email:</label>
+						<input class="input100" type="email" name="email">
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<label for="Username">Username:</label>
+						<input class="input100" type="text" name="username">
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<label for="password">Password:</label>
+						<input class="input100" type="password" name="password">
+					</div>
+
+					<div class="wrap-input100 validate-input">
+						<label for="confirm_password">Confirm Password:</label>
+						<input class="input100" type="password" name="confirm_password">
+					</div>
+					
+					<div class="container-login100-form-btn">
+                        <input class="btn btn-success" type="submit" value="Submit">
+					</div><br><br><br>
+
+					<div class="text-center text-primary fw-bold">
+						<small>Existing User? <a href="/log" class="text-danger">Login Now</a></small>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="{% static 'log/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'log/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/vendor/tilt/tilt.jquery.min.js' %}"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'log/js/main.js' %}"></script>
+
+</body>
+</html>

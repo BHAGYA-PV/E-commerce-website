@@ -1,0 +1,90 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Table 06</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'table/css/style.css' %}">
+
+	</head>
+	<body>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light">
+              <div class="container">
+                  <img style="padding: 10px;" src="{% static 'assets/images/logo.png' %}">
+                  <div class="collapse navbar-collapse">
+                      <ul class="navbar-nav me-auto" style="padding-left: 180px;">
+                          <li class="nav-item" style="padding-left: 500px;">
+                            <a style="width: 180px;" class="btn btn-success" href="/adm">Back to Adminhome</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+            </nav>
+          </header>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="h2 mb-4 text-center"><strong>Order Details</strong></h2>
+					<div class="table-wrap">
+						<table class="table">
+						  <thead class="thead-primary">
+						    <tr>
+								<th>User Name</th>
+								<th>Phone</th>
+								<th>Address</th>
+								<th>Date</th>
+								<th>Item Name</th>
+								<th>Price</th>
+								<th>Order Status</th>
+						    </tr>
+						  </thead>
+						<tbody>
+						  {% for i in view %}
+						    <tr class="alert" role="alert">
+						    	<td>
+						    		{{i.user.name}}
+						    	</td>
+						    	<td>
+						    		{{i.order.phone}}
+						    	</td>
+						      	<td>
+									{{i.order.address}}
+						      	</td>
+						      	<td>
+									{{i.order.date}}
+							  	</td>
+								  <td>
+									{{i.products.name}}
+							  	</td>
+								<td>
+									{{i.price}}
+							  	</td>
+								<td>
+									{{i.status}}
+							  	</td>
+						    </tr>
+						  {% endfor %}
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'table/js/jquery.min.js' %}"></script>
+  <script src="{% static 'table/js/popper.js' %}"></script>
+  <script src="{% static 'table/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'table/js/main.js' %}"></script>
+
+	</body>
+</html>
+
